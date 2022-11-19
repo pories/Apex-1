@@ -38,20 +38,25 @@ Create a tab panel. Put the related list of the account, stop scrolling for this
 To create another tab, copy paste, and then change label to contacts. 
 Contacts are a related list. 
 Works up to here. 
-<apex:relatedList subject="{!$Account}" list="cases"> is where it fails due to permission issue. 
+<apex:relatedList subject="{!Account}" list="cases"> is where it fails due to permission issue. 
 
 This seems to fail due to a SF issue. Takes forever to load, and only shows it a bit.  
 
 
+
+-->
 <apex:page standardController="Account">
 <apex:pageBlock title="Tabs to make this cool!">
- <apex:tabPanel>
+ <apex:tabPanel >
     <apex:tab label="Details">
-        <apex:detail relatedList="false" title="true">  
+        <apex:detail relatedList="false" title="false">  
             </apex:detail>   
     </apex:tab>
     <apex:tab label="Contacts">
-
+        <!--
+        <apex:relatedList subject="{!Account}" list="contacts"> 
+            </apex:relatedList>
+        -->
     </apex:tab>
 
     <apex:tab label="Cases">
@@ -70,4 +75,3 @@ This seems to fail due to a SF issue. Takes forever to load, and only shows it a
     
 
 </apex:page>
--->
