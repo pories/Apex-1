@@ -1,0 +1,30 @@
+<apex:page standardController="Account">
+ <!-- commenting out -->
+ 
+ <!--This is the first set. You can't comment out normal so this is in doubles.  -->  
+ <!-- 1
+{! $User.FirstName} <br/>
+{! $User.LastName} <br/>
+You are viewing the account of: {! Account.Name}
+--> 
+<!-- 
+1
+ This section should be below the page block, will display all the details of the record. 
+ <apex:detail />
+2
+Now you can display just the account owner ID. Then you can put in the page block. 
+<apex:detail subject="{!Account.ownerId}" relatedList="false"/>
+-->
+
+<apex:pageBlock title="Hi {!$User.FirstName }" >
+     
+    You are viewing the account of: {!Account.Name}. <br/>
+    Love,
+    {!$User.LastName} 
+</apex:pageBlock>
+
+
+
+
+
+</apex:page>
